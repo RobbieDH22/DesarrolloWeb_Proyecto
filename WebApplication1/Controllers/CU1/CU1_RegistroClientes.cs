@@ -18,18 +18,5 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-
-        [HttpPost]
-        public IActionResult Validar(string eleccion)
-        {
-            if (eleccion == "IniciarSesion")
-            {
-                return RedirectToAction("LoginCliente");
-            }
-            else
-            {
-                return RedirectToAction("RegistroCliente");
-            }
-        }
     }
 }
