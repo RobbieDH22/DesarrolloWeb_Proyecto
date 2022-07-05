@@ -18,5 +18,22 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Validate(IFormCollection form)
+        {
+            var dni = form["dni"];
+            var password = form["password"];
+
+            if (dni == "70186471" && password == "admin")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View("LoginCliente");
+            }
+        }
+
     }
 }
